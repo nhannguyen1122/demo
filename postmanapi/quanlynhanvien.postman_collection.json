@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "9a998624-95c3-4246-b848-d5aa1d68c497",
+		"name": "quanlynhanvien",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "thuyenchuyen",
+			"item": [
+				{
+					"name": "http://localhost:3000/quanlynhanvien/thuyenchuyen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/quanlynhanvien/thuyenchuyen/id_nhanvien0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlynhanvien",
+								"thuyenchuyen",
+								"id_nhanvien0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlynhanvien/thuyenchuyen/id_nhanvien6",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "ten_phongban",
+									"value": "kế toán",
+									"type": "text"
+								},
+								{
+									"key": "ten_chucvu",
+									"value": "quản lý",
+									"type": "text"
+								},
+								{
+									"key": "tenhopdong",
+									"value": "hd thời vụ",
+									"type": "text"
+								},
+								{
+									"key": "soCMND",
+									"value": "1231312",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "ngaysinh",
+									"value": "2/3/1998",
+									"type": "text"
+								},
+								{
+									"key": "diachi",
+									"value": "ha noi",
+									"type": "text"
+								},
+								{
+									"key": "hocvan",
+									"value": "dai hoc",
+									"type": "text"
+								},
+								{
+									"key": "ten_nhanvien",
+									"value": "cao minh chúng 1",
+									"type": "text"
+								},
+								{
+									"key": "trangthai ",
+									"value": "hoat dong",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "trangthai",
+									"value": "1",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quanlynhanvien/thuyenchuyen/id_nhanvien0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlynhanvien",
+								"thuyenchuyen",
+								"id_nhanvien0"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "http://localhost:3000/quanlynhanvien/id_nhanvien5",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quanlynhanvien/chitiet/id_nhanvien0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlynhanvien",
+						"chitiet",
+						"id_nhanvien0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlynhanvien",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "id_nhanvien5",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ten_phongban",
+							"value": "hành chính",
+							"type": "text"
+						},
+						{
+							"key": "ten_chucvu",
+							"value": "quản lý",
+							"type": "text"
+						},
+						{
+							"key": "tenhopdong",
+							"value": "hd thời vụ",
+							"type": "text"
+						},
+						{
+							"key": "soCMND",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "123@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "ngaysinh",
+							"value": "123/234",
+							"type": "text"
+						},
+						{
+							"key": "diachi",
+							"value": "ha noi",
+							"type": "text"
+						},
+						{
+							"key": "hocvan",
+							"value": "dai hoc",
+							"type": "text"
+						},
+						{
+							"key": "ten_nhanvien",
+							"value": "nguyễn thị c",
+							"type": "text"
+						},
+						{
+							"key": "trangthai",
+							"value": "1",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlynhanvien/themnhanvien",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlynhanvien",
+						"themnhanvien"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlynhanvien",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quanlynhanvien",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlynhanvien"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlynhanvien/id_nhanvien5",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quanlynhanvien/id_nhanvien5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlynhanvien",
+						"id_nhanvien5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlynhanvien",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "id_nhanvien5",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ten_phongban",
+							"value": "hành chính",
+							"type": "text"
+						},
+						{
+							"key": "ten_chucvu",
+							"value": "nv thử việc",
+							"type": "text"
+						},
+						{
+							"key": "tenhopdong",
+							"value": "hd chính thức",
+							"type": "text"
+						},
+						{
+							"key": "soCMND",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "123@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "ngaysinh",
+							"value": "123/234",
+							"type": "text"
+						},
+						{
+							"key": "diachi",
+							"value": "ha noi",
+							"type": "text"
+						},
+						{
+							"key": "hocvan",
+							"value": "dai hoc",
+							"type": "text"
+						},
+						{
+							"key": "ten_nhanvien",
+							"value": "cao minh chúng1",
+							"type": "text"
+						},
+						{
+							"key": "trangthai",
+							"value": "1",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlynhanvien/id_nhanvien0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlynhanvien",
+						"id_nhanvien0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

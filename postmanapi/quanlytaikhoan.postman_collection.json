@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "0fc3f26d-a3ae-498d-93b4-a5689db29e4b",
+		"name": "quanlytaikhoan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/quanlytaikhoan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlytaikhoan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlytaikhoan"
+					]
+				},
+				"description": "(quan ly tai khoan) xem danh sach tai khoan"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlytaikhoan/themtaikhoan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_nhanvien",
+							"value": "id_nhanvien3",
+							"type": "text"
+						},
+						{
+							"key": "tendangnhap",
+							"value": "taikhoanquanly31",
+							"type": "text"
+						},
+						{
+							"key": "matkhau",
+							"value": "matkhauquanly1",
+							"type": "text"
+						},
+						{
+							"key": "quyen",
+							"value": "Nhân viên quản lý",
+							"type": "text"
+						},
+						{
+							"key": "ten_nhanvien",
+							"value": "nguyễn anh nhân",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlytaikhoan/themtaikhoan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlytaikhoan",
+						"themtaikhoan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlytaikhoan/id_taikhoanquanly_2",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tendangnhap",
+							"value": "taikhoanquanly2",
+							"type": "text"
+						},
+						{
+							"key": "matkhau",
+							"value": "matkhau222",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlytaikhoan/id_taikhoanquanly_2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlytaikhoan",
+						"id_taikhoanquanly_2"
+					],
+					"query": [
+						{
+							"key": "tendang nhap",
+							"value": "nha",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlytaikhoan/id_taikhoanquanly_5",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quanlytaikhoan/id_taikhoanquanly_4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlytaikhoan",
+						"id_taikhoanquanly_4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

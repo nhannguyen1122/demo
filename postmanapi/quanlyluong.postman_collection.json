@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "cb3b6501-149f-48ee-a884-462293f52c49",
+		"name": "quanlyluong",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "luongthuongphat",
+			"item": [
+				{
+					"name": "http://localhost:3000/quanlyluong/luongphatsinh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/luongthuongphat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"luongthuongphat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlyluong/luongphatsinh/id_phatsinh5",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_nhanvien",
+									"value": "id_nhanvien5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ten_khenthuong",
+									"value": "ten_khenthuong",
+									"type": "text"
+								},
+								{
+									"key": "tienthuong",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "tienphucap",
+									"value": "30000",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ten_loiphat",
+									"value": "loiphat2",
+									"type": "text"
+								},
+								{
+									"key": "tienphat",
+									"value": "400009",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/luongthuongphat/id_nhanvien",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"luongthuongphat",
+								"id_nhanvien"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "luongcb",
+			"item": [
+				{
+					"name": "http://localhost:3000/quanlyluong/luongnv",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/luongcb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"luongcb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlyluong/addluongcb",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "id_nstv",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ten_phongban",
+									"value": "hành chính",
+									"type": "text"
+								},
+								{
+									"key": "ten_chucvu",
+									"value": "quản lý",
+									"type": "text"
+								},
+								{
+									"key": "ten_phongban",
+									"value": "nhân sự",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ten_chucvu",
+									"value": "quanly",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "luongcapbac",
+									"value": "900000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/addluongcb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"addluongcb"
+							],
+							"query": [
+								{
+									"key": "id_phongban",
+									"value": "kế toán",
+									"disabled": true
+								},
+								{
+									"key": "id_chucvu",
+									"value": "nvthoivu",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlyluong/id_nhansu_nvthoivu",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/luongcb/id_hanhchinh_nvthuviec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"luongcb",
+								"id_hanhchinh_nvthuviec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlyluong/id_ketoan_nvthoivu",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "ten_phongban",
+									"value": "kế toán",
+									"type": "text"
+								},
+								{
+									"key": "ten_chucvu",
+									"value": "nv thử việc",
+									"type": "text"
+								},
+								{
+									"key": "luongcapbac",
+									"value": "1111",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/luongcb/id_hanhchinh_nvthuviec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"luongcb",
+								"id_hanhchinh_nvthuviec"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "phucap",
+			"item": [
+				{
+					"name": "http://localhost:3000/quanlyluong/phucap",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/phucap",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"phucap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlyluong/phucap/addphucap",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "ten_chucvu",
+									"value": "nv thử việc",
+									"type": "text"
+								},
+								{
+									"key": "tien_phucap",
+									"value": "100000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/phucap/addphucap",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"phucap",
+								"addphucap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlyluong/phucap/id_phucap0",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "ten_chucvu",
+									"value": "quản lý",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tien_phucap",
+									"value": "800000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/phucap/id_phucap0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"phucap",
+								"id_phucap0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/quanlyluong/phucap/id_phucap0",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/quanlyluong/phucap/id_phucap2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quanlyluong",
+								"phucap",
+								"id_phucap2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "http://localhost:3000/quanlyluong/luongnv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE3MDIwMjYsImV4cCI6MTU5MTcwNTYyNn0.3LssoK22IcWWGNgaCLqTDjjXuGuXGrWKnI3vDT4UoLU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quanlyluong/luongnv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyluong",
+						"luongnv"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

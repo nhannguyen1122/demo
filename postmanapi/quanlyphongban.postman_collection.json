@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "62c44ca4-5d6b-4228-b9c4-7fa5c278b16b",
+		"name": "quanlyphongban",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/quanlyphongban",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "id_quanlyhanhchinh",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ten_phongban",
+							"value": "kế hoạch và đầu tư",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlyphongban",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyphongban"
+					],
+					"query": [
+						{
+							"key": "ten_phongban",
+							"value": "đào tạo ",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlyphongban",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quanlyphongban",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyphongban"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlyphongban/id_kythuat",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "ten_phongban",
+							"value": "kế hoạch và dau tư",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlyphongban/id_kehoachvadautu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyphongban",
+						"id_kehoachvadautu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlyphongban/id_quanlyhanhchinh",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTA0MjIsImV4cCI6MTU5MTY5NDAyMn0.ESdRxRYB1yQyM7AYYp3BTY3VaETj_O3U1AXh7OunLJc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quanlyphongban/id_kehoachvadautu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyphongban",
+						"id_kehoachvadautu"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

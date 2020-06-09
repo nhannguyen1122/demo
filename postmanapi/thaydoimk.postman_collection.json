@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "dbfb62db-5927-4ce4-bec9-4b460dd18bf7",
+		"name": "thaydoimk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/thaydoimatkhau/id_taikhoanquanly_2",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "matkhau",
+							"value": "matkhautaikhoanquanly2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/thaydoimatkhau/id_taikhoanquanly_2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thaydoimatkhau",
+						"id_taikhoanquanly_2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

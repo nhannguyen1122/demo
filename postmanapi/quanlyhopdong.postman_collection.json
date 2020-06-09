@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "ebb39ced-132f-4ee7-9783-de352c34a18b",
+		"name": "quanlyhopdong",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/quanlyhopdong",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlyhopdong",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyhopdong"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlyhopdong",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "id_hopdongthoivu",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "tenhopdong",
+							"value": "hd dài lâu",
+							"type": "text"
+						},
+						{
+							"key": "loaihopdong",
+							"value": "dài lâu",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlyhopdong/themhopdong",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyhopdong",
+						"themhopdong"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlyhopdong/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tenhopdong",
+							"value": "hd lâu dài",
+							"type": "text"
+						},
+						{
+							"key": "loaihopdong",
+							"value": "lâu dài",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quanlyhopdong/id_hddailau",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyhopdong",
+						"id_hddailau"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/quanlyhopdong/id_hdthuviec",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTMxMzAsImV4cCI6MTU5MTY5NjczMH0.xAFAvngOKLJ48ThTsJ7lfezmnE6A-PPzGpLg_FrFNcs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quanlyhopdong/id_hddailau",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quanlyhopdong",
+						"id_hddailau"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

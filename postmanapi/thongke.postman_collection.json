@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "66fa8571-5658-4e2c-83ea-bbe8455fe9d9",
+		"name": "thongke",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/thongke/dsnv",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTc2NjgsImV4cCI6MTU5MTcwMTI2OH0.m75G6_2VYcihu9pNOmkzQgRoXp887nqiVsgkpoNRYio",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/thongke/dsnv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thongke",
+						"dsnv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/thongke/luongtheothang",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTc2NjgsImV4cCI6MTU5MTcwMTI2OH0.m75G6_2VYcihu9pNOmkzQgRoXp887nqiVsgkpoNRYio",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/thongke/luongtheothang",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thongke",
+						"luongtheothang"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/thongke/luongtheophongban",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE2OTc2NjgsImV4cCI6MTU5MTcwMTI2OH0.m75G6_2VYcihu9pNOmkzQgRoXp887nqiVsgkpoNRYio",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/thongke/luongtheophongban",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thongke",
+						"luongtheophongban"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/thongke/luongnhanvien/id_nhanvien0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImlkX3RhaWtob2FuYWRtaW4iLCJpYXQiOjE1OTE3MDIwMjYsImV4cCI6MTU5MTcwNTYyNn0.3LssoK22IcWWGNgaCLqTDjjXuGuXGrWKnI3vDT4UoLU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/thongke/luongnhanvien/id_nhanvien0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"thongke",
+						"luongnhanvien",
+						"id_nhanvien0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
