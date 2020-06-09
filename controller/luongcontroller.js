@@ -152,7 +152,7 @@ module.exports ={
                                                                 res.status(500).json(err);
                                                             }
                                                         if(result.affectedRows>0){
-                                                           db.query(`update test1.thuongphat set ten_khenthuong='', tienthuong=0 , ten_loiphat='', tienphat=0 , thang=7 `,(err,result)=>{
+                                                           db.query(`update test1.thuongphat set ten_khenthuong='', tienthuong=0 , ten_loiphat='', tienphat=0 , thang='${new Date().getMonth()+2}' `,(err,result)=>{
                                                                if(err){
                                                                    res.status(500).json(err);
                                                                }
