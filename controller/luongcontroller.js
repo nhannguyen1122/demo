@@ -14,11 +14,11 @@ module.exports ={
         db.query(`select luongcb.id , phongban.ten_phongban, chucvu.ten_chucvu,luongcapbac from luongcb,phongban,
         chucvu where luongcb.id_phongban=phongban.id and luongcb.id_chucvu=chucvu.id`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
             else{
                
-                res.json(result);
+               return  res.json(result);
             }
         })
     },
@@ -50,7 +50,7 @@ module.exports ={
     // // //         '${array[i].thangtinhcong}','${array[i].ten_chucvu}','${array[i].ten_phongban}','${array[i].luongcapbac}',
     // // //         '${array[i].tien_phucap}','${array[i].ten_khenthuong}','${array[i].tienthuong}','${array[i].ten_loiphat}','${array[i].tienphat}','${array[i].tongluong}')`,(err,result)=>{
     // // //             if(err){
-    // // //                 res.status(500).json(err);
+    // // //                return  res.status(500).json(err);
     // // //             }
     // // //             if(result.affectedRows===1){
     // // //               state=true;
@@ -70,20 +70,20 @@ module.exports ={
     // //     if(value.length>0){
     // //         db.query(sql,[value],(err,result)=>{
     // //             if(err){
-    // //                 res.status(500).json(err);
+    // //                return  res.status(500).json(err);
     // //             }
     // //            if(result.affectedRows>0){
     // //                 array=[];
-    // //                res.status(200).json({msg:'luu thanh cong'});
+    // //               return  res.status(200).json({msg:'luu thanh cong'});
     // //            }
     // //         });
     // //     }
     // //   else{
-    // //       res.status(500).json({msg:'da luu'});
+    // //      return  res.status(500).json({msg:'da luu'});
     // //   }
     // // }
     // // else{
-    // //     res.status(200).json({msg:'du lieu   '});
+    // //    return  res.status(200).json({msg:'du lieu   '});
     // // }
     // }
     // ,
@@ -92,13 +92,13 @@ module.exports ={
 
         db.query(`select count(*) as dembangcong from bangcong`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
            if(result[0].dembangcong){
             db.query(`select id from luongnhanvien where luongnhanvien.thangtinhcong=${new Date().getMonth()+1}`,(err,result)=>{
                 console.log(result.length)
                 if(err){
-                    res.status(500).json(err);
+                   return  res.status(500).json(err);
                 }
                 if(result.length<=0){
                         
@@ -137,7 +137,7 @@ module.exports ={
                             
                             `,(err,result)=>{
                                     if(err){
-                                        res.status(500).json(err);
+                                       return  res.status(500).json(err);
                                     }
                                     else{
                                        
@@ -149,15 +149,15 @@ module.exports ={
                                         array=result;
                                                 db.query(sql,[value],(err,result)=>{
                                                         if(err){
-                                                                res.status(500).json(err);
+                                                               return  res.status(500).json(err);
                                                             }
                                                         if(result.affectedRows>0){
                                                            db.query(`update test1.thuongphat set ten_khenthuong='', tienthuong=0 , ten_loiphat='', tienphat=0 , thang='${new Date().getMonth()+2}' `,(err,result)=>{
                                                                if(err){
-                                                                   res.status(500).json(err);
+                                                                  return  res.status(500).json(err);
                                                                }
                                                               if(result.affectedRows>0){
-                                                                  res.status(200).json(array);
+                                                                 return  res.status(200).json(array);
                                                               }
                                                            })
                                                                 
@@ -170,10 +170,10 @@ module.exports ={
                 else{
                         db.query( `select * from luongnhanvien where thangtinhcong=${new Date().getMonth()+1}`,(err,result)=>{
                             if(err){
-                                res.status(500).json(err);
+                               return  res.status(500).json(err);
                             }
                             else{
-                                res.json(result);
+                               return  res.json(result);
                             }
                         });
     
@@ -182,7 +182,7 @@ module.exports ={
             })  
            }
            else{
-               res.status(500).json({msg:'bang cong chua co du lieu'});
+              return  res.status(500).json({msg:'bang cong chua co du lieu'});
            }
         })
     },
@@ -211,20 +211,20 @@ module.exports ={
            db.query(`select id from luongcb where id_chucvu='${result[0].id2}' and id_phongban='${result[0].id1}'`,(err,result)=>{
             console.log('result la',result);
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
            if(result.length<=0){
                db.query(`insert into luongcb(id,id_phongban,id_chucvu,luongcapbac,thoigiancapnhat) values('${generateid}','${object.id1}','${object.id2}','${luongcapbac}','${new Date().toString()}')`,(err,result)=>{
                    if(err){
-                       res.status(500).json(err);
+                      return  res.status(500).json(err);
                    }
                    if(result.affectedRows===1){
-                       res.status(201).json({msg:'add success'});
+                      return  res.status(201).json({msg:'add success'});
                    }
                })
            }
            else{
-               res.json({msg:'luong cap bac nay da ton tai'});
+              return  res.json({msg:'luong cap bac nay da ton tai'});
            }
         })
          }
@@ -243,33 +243,33 @@ module.exports ={
            
             luongcb=result[0].luongcapbac;
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
            if(result.length>0){
                
                     db.query(`select phongban.id as id1,chucvu.id as id2 from phongban,chucvu where phongban.ten_phongban='${ten_phongban}' 
                     and chucvu.ten_chucvu='${ten_chucvu}' `,(err,result)=>{
                         if(err){
-                            res.status(500).json(err);
+                           return  res.status(500).json(err);
                         }
                        
                         object=result[0];
                         if(result.length>0){
                             db.query(`select id from luongcb where id_phongban='${result[0].id1}'and id_chucvu='${result[0].id2}' and luongcapbac='${luongcapbac}'`,(err,result)=>{
                                 if(err){
-                                    res.status(500).json(err);
+                                   return  res.status(500).json(err);
                                 }
                                 console.log('result1',result);
                                 if(result.length<=0){
                                    db.query(`select id from luongcb where id_phongban='${object.id1}' and id_chucvu='${object.id2}'`,(err,result)=>{
                                        if(err){
-                                           res.status(500).json(err);
+                                          return  res.status(500).json(err);
 
                                        }
                                        if(result.length<=0){
                                         db.query( ` update luongcb SET   id_phongban='${object.id1}',id_chucvu='${object.id2}',luongcapbac='${luongcapbac}',thoigiancapnhat='${new Date().toString()}' where id='${id}'`,(err,result)=>{
                                             if(err){
-                                                res.status(500).json(err);
+                                               return  res.status(500).json(err);
                                             }
                                             else{
                                                if(result.affectedRows===1){
@@ -277,13 +277,13 @@ module.exports ={
                                                 //update primary key?????????
                                                 //    db.query(`update luongcb set id='${generateid}'`,(err,result)=>{
                                                 //        if(err){
-                                                //            res.status(500).json(err);
+                                                //           return  res.status(500).json(err);
                                                 //        }
                                                 //        else{
                                                 //            res.send(result);
                                                 //        }
                                                 //    })
-                                                res.status(200).json({msg:'update  success'});
+                                               return  res.status(200).json({msg:'update  success'});
                                                }
                                             }
                                         })
@@ -291,7 +291,7 @@ module.exports ={
                                        else{
                                         db.query( ` update luongcb SET  luongcapbac='${luongcapbac}',thoigiancapnhat='${new Date().toString()}' where id='${id}'`,(err,result)=>{
                                             if(err){
-                                                res.status(500).json(err);
+                                               return  res.status(500).json(err);
                                             }
                                             else{
                                                if(result.affectedRows===1){
@@ -299,13 +299,13 @@ module.exports ={
                                                 //update primary key?????????
                                                 //    db.query(`update luongcb set id='${generateid}'`,(err,result)=>{
                                                 //        if(err){
-                                                //            res.status(500).json(err);
+                                                //           return  res.status(500).json(err);
                                                 //        }
                                                 //        else{
                                                 //            res.send(result);
                                                 //        }
                                                 //    })
-                                                res.status(200).json({msg:'update luongcapbac success'});
+                                               return  res.status(200).json({msg:'update luongcapbac success'});
                                                }
                                             }
                                         })
@@ -315,7 +315,7 @@ module.exports ={
 
                                 }
                                 else{
-                                   res.status(500).json({msg:'du lieu cap nhat chua thay doi'})
+                                  return  res.status(500).json({msg:'du lieu cap nhat chua thay doi'})
                                 }
 
 
@@ -331,7 +331,7 @@ module.exports ={
                })
            }
            else{
-               res.status(500).json({msg:'ko ton tai'});
+              return  res.status(500).json({msg:'ko ton tai'});
            }
         })
     },
@@ -339,22 +339,22 @@ module.exports ={
         const{id}=req.params;
         db.query(`select * from luongcb where id='${id}'`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
             if(result.length<=0){
-                res.status(500).json({msg:'ko tim thay id'});
+               return  res.status(500).json({msg:'ko tim thay id'});
             }
             else{
                 
                 db.query(`DELETE FROM luongcb WHERE id='${id}'`,(err,result)=>{
                     if(err){
-                        res.json(err);
+                       return  res.json(err);
                     }
                     if(result.affectedRows===1){
-                        res.status(204).json({msg:'delete thanh cong'});
+                       return  res.status(204).json({msg:'delete thanh cong'});
                     }
                     else{
-                        res.status(500).json({msg:'delete that bai'});
+                       return  res.status(500).json({msg:'delete that bai'});
                     }
                 })
             }
@@ -368,10 +368,10 @@ module.exports ={
         thuongphat.tienthuong,thuongphat.ten_loiphat,thuongphat.tienphat
          from test1.thuongphat,test1.nhanvien where nhanvien.id=thuongphat.id_nhanvien `,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
             else{
-                res.status(200).json(result);
+               return  res.status(200).json(result);
             }
         })
     },
@@ -395,10 +395,10 @@ module.exports ={
                        
     //                     db.query(`insert into phatsinh(id,id_nhanvien,tienthuong,ten_phucap,tienphucap,ten_loiphat,tienphat) values('${autoid}','${id_nhanvien}','${tienthuong}','${ten_phucap}','${tienphucap}','${ten_loiphat}','${tienphat}')`,(err,result)=>{
     //                         if(err){
-    //                             res.json(err);
+    //                            return  res.json(err);
     //                         }
     //                         else{
-    //                             res.status(201).json({msg:'add success'}) ;
+    //                            return  res.status(201).json({msg:'add success'}) ;
     //                            }
     //                     })
 
@@ -415,22 +415,22 @@ module.exports ={
         db.query(`select id from thuongphat where thuongphat.id_nhanvien='${id}'`,(err,result)=>{
             
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
            if(result.length>0){
                db.query( ` update thuongphat SET ten_khenthuong='${ten_khenthuong}', tienthuong='${tienthuong}',ten_loiphat='${ten_loiphat}',tienphat='${tienphat}' where id='${result[0].id}'`,(err,result)=>{
                    
                 console.log('id thuongphat la',result); 
                 if(err){
-                       res.status(500).json(err);
+                      return  res.status(500).json(err);
                    }
                    else{
-                       res.status(200).json({msg:'update thanh cong'});
+                      return  res.status(200).json({msg:'update thanh cong'});
                    }
                })
            }
            else{
-               res.status(500).json({msg:'ko ton tai'});
+              return  res.status(500).json({msg:'ko ton tai'});
            }
         })
     },
@@ -438,7 +438,7 @@ module.exports ={
     //     const{id}=req.params;
     //     db.query(`select * from phatsinh where id='${id}'`,(err,result)=>{
     //         if(err){
-    //             res.status(500).json(err);
+    //            return  res.status(500).json(err);
     //         }
     //         if(result.length<=0){
     //             res.send('ko tim thay id');
@@ -447,13 +447,13 @@ module.exports ={
     //             db.query(`DELETE FROM luongcb WHERE id='${id}'`,(err,result)=>{
                     
     //                 if(err){
-    //                     res.json(err);
+    //                    return  res.json(err);
     //                 }
     //                 if(result.affectedRows===1){
-    //                     res.status(204).json({msg:'delete thanh cong'});
+    //                    return  res.status(204).json({msg:'delete thanh cong'});
     //                 }
     //                 else{
-    //                     res.json({msg:'delete that bai'});
+    //                    return  res.json({msg:'delete that bai'});
     //                 }
     //             })
     //         }
@@ -466,9 +466,9 @@ module.exports ={
     getphucap:(req, res)=>{
         db.query(`select phucap.id,chucvu.ten_chucvu,phucap.tien_phucap,thoigiancapnhat from phucap,chucvu where phucap.id_chucvu=chucvu.id `,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
-            res.status(200).json(result);
+           return  res.status(200).json(result);
         })
     },
     themphucap:(req,res)=>{
@@ -478,7 +478,7 @@ module.exports ={
         db.query(`select id from phucap `,(err,result)=>{
             console.log(result);
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
             else{
                 if(result.length>0){
@@ -494,31 +494,31 @@ module.exports ={
                 }
                 db.query(`select id  from chucvu where chucvu.ten_chucvu='${ten_chucvu}'`,(err,result)=>{
                     if(err){
-                        res.status(500).json(err);
+                       return  res.status(500).json(err);
                     }
                    if(result.length>0){
                        idchucvu=result[0].id;
                      db.query(`SELECT id from phucap where phucap.id_chucvu='${idchucvu}'`,(err,result)=>{
                          if(err){
-                             res.status(500).json(err);
+                            return  res.status(500).json(err);
                          }
                          if(result.length<=0){
                             db.query(`insert into phucap(id,id_chucvu,tien_phucap,thoigiancapnhat) values('${autogenerateid}','${idchucvu}','${tien_phucap}','${new Date().toString()}')`,(err,result)=>{
                                 if(err){
-                                    res.status(500).json(err);
+                                   return  res.status(500).json(err);
                                 }
                                if(result.affectedRows===1){
-                                   res.status(201).json({msg:'add success'});
+                                  return  res.status(201).json({msg:'add success'});
                                }
                             })
                          }
                          else{
-                             res.status(500).json({msg:'luong cap bac nay da ton tai'})
+                            return  res.status(500).json({msg:'luong cap bac nay da ton tai'})
                          }
                      })
                    }
                    else{
-                       res.status(500).json({msg:'chuc vu ko ton tai!'})
+                      return  res.status(500).json({msg:'chuc vu ko ton tai!'})
                    }
                 })
             }
@@ -536,10 +536,10 @@ module.exports ={
                   db.query(`update phucap set tien_phucap='${tien_phucap}'
                   ,thoigiancapnhat='${new Date().toString()}' where id='${id}'`,(err,result)=>{
                       if(err){
-                          res.status(500).json(err);
+                         return  res.status(500).json(err);
                       }
                       if(result.affectedRows===1){
-                          res.status(200).json({msg:'update success'});
+                         return  res.status(200).json({msg:'update success'});
                       }
              
             })
@@ -549,13 +549,13 @@ module.exports ={
         const {id}=req.params;
         db.query(`delete from phucap where id='${id}'`, (err,result)=>{
             if(err){
-                                    res.json(err);
+                                   return  res.json(err);
                                 }
                                 if(result.affectedRows===1){
-                                    res.status(204).json({msg:'delete thanh cong'});
+                                   return  res.status(204).json({msg:'delete thanh cong'});
                                 }
                                 else{
-                                    res.status(500).json({msg:'delete that bai'});
+                                   return  res.status(500).json({msg:'delete that bai'});
                                 }
         })
     }

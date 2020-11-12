@@ -18,13 +18,13 @@ module.exports ={
     getList:(req,res)=>{
         db.query(`select * from phongban`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+                 return res.status(500).json(err);
             }
             if(result.length<=0){
-                res.status(500).json(null);
+                 return res.status(500).json(null);
             }
             else{
-                res.status(200).json(result);
+                 return res.status(200).json(result);
             }
         })
     },
@@ -33,11 +33,11 @@ module.exports ={
         let autogenerateid='id_'.concat(change_alias(ten_phongban).split(' ').join(''));
         db.query(`insert into phongban (id,ten_phongban,thoigiancapnhat)values ('${autogenerateid}','${ten_phongban}','${new Date().toString()}')`,(err,result)=>{
             if(err){
-                res.status(500).json(err)
+                 return res.status(500).json(err)
             }
            
            else{
-            res.status(201).json({msg:'add success'});
+             return res.status(201).json({msg:'add success'});
            }
         })
 
@@ -50,31 +50,31 @@ module.exports ={
         const{ten_phongban}=req.body;
         db.query(`select id from phongban where id='${id}'`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+                 return res.status(500).json(err);
             }
             if(result.length<=0){
-                res.status(500).json({msg:'ko tim thay id'});
+                 return res.status(500).json({msg:'ko tim thay id'});
             }
             else{
                db.query(`select id from phongban where  phongban.ten_phongban='${ten_phongban}' and phongban.id!='${id}'`,(err,result)=>{
                    if(err){
-                       res.status(500).json(err);
+                        return res.status(500).json(err);
                    }
                    if(result.length<=0){
                     db.query(`UPDATE phongban SET ten_phongban='${ten_phongban}',thoigiancapnhat='${new Date().toString()}'where id='${id}'`,(err,result)=>{
                         if(err){
-                            res.status(500).json(err)
+                             return res.status(500).json(err)
                         }
                         if(result.affectedRows===1){
-                            res.status(200).json({msg:'update thanh cong'});
+                             return res.status(200).json({msg:'update thanh cong'});
                         }
                         else{
-                            res.status(500).json({msg:'update that bai'});
+                             return res.status(500).json({msg:'update that bai'});
                         }
                     });
                    }
                    else{
-                       res.status(500).json({msg:'phong ban da ton tai'})
+                        return res.status(500).json({msg:'phong ban da ton tai'})
                    }
                })
             }
@@ -85,21 +85,21 @@ module.exports ={
         const{id}=req.params;
         db.query(`select * from phongban where id='${id}'`,(err,result)=>{
             if(err){
-               res.status(500).json(err);
+                return res.status(500).json(err);
             }
             if(result.length<=0){
-                res.status(500).json({msg:'ko tim thay id'})
+                 return res.status(500).json({msg:'ko tim thay id'})
             }
             else{
                 db.query(`DELETE FROM phongban WHERE id='${id}'`,(err,result)=>{
                     if(err){
-                        res.status(500).json(err);
+                         return res.status(500).json(err);
                     }
                     if(result.affectedRows===1){
-                        res.status(204).json({msg:'delete thanh cong'});
+                         return res.status(204).json({msg:'delete thanh cong'});
                     }
                     else{
-                        res.status(500).json({msg:'delete that bai'});
+                         return res.status(500).json({msg:'delete that bai'});
                     }
                 })
             }

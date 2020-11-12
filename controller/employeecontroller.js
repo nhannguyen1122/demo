@@ -11,22 +11,22 @@ module.exports ={
     getList:(req,res) =>{
         db.query(`SELECT nhanvien.id,ten_nhanvien,trangthai,ten_phongban,ten_chucvu,tenhopdong,soCMND,email,ngaysinh,diachi,hocvan,nhanvien.thoigiancapnhat FROM test1.nhanvien,test1.phongban,test1.chucvu,test1.hopdong where nhanvien.id_chucvu=chucvu.id and nhanvien.id_phongban=phongban.id and nhanvien.id_hopdong=hopdong.id`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
-            res.status(200).json(result);
+           return  res.status(200).json(result);
         });
     },
     getdetail:(req,res) =>{
         const {id}=req.params;
         db.query(`SELECT nhanvien.id,ten_nhanvien,trangthai,ten_phongban,ten_chucvu,tenhopdong,soCMND,email,ngaysinh,diachi,hocvan,test1.nhanvien.thoigiancapnhat FROM test1.nhanvien,test1.phongban,test1.chucvu,test1.hopdong where nhanvien.id='${id}'and nhanvien.id_chucvu=chucvu.id and nhanvien.id_phongban=phongban.id and nhanvien.id_hopdong=hopdong.id`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+               return  res.status(500).json(err);
             }
           if(result.length<=0){
-              res.status(500).json({msg:'ko tim thay id'});
+             return  res.status(500).json({msg:'ko tim thay id'});
           }
           else{
-              res.status(200).json(result);
+             return  res.status(200).json(result);
           }
            
         })
@@ -44,7 +44,7 @@ module.exports ={
                  `,(err,result)=>{
                      
                     if(err){
-                        res.status(500).send(err)
+                       return  res.status(500).send(err)
                     }
                     else{
                         
@@ -64,7 +64,7 @@ module.exports ={
                         db.query(`select phongban.id as phongbanid ,chucvu.id as chucvuid,hopdong.id as hopdongid from hopdong, phongban,chucvu where ten_phongban='${ten_phongban}'
                         and ten_chucvu='${ten_chucvu}'and tenhopdong='${tenhopdong}'`,(err,result)=>{
                             if(err){
-                                res.status(500).json(err);
+                               return  res.status(500).json(err);
                             }
                             else{
                                object=result[0];
@@ -76,10 +76,10 @@ module.exports ={
                                   `,(err,result)=>{
                                       
                                       if(err){
-                                         res.status(500).json(err);
+                                        return  res.status(500).json(err);
                                       }
                                       if(result.length>0){
-                                          res.status(500).json({msg:'da ton tai trong csdl'});
+                                         return  res.status(500).json({msg:'da ton tai trong csdl'});
                                       }
                                       else{
                                                  
@@ -97,7 +97,7 @@ module.exports ={
                                                     '${ten_chucvu}','${tenhopdong}','${new Date().toString()}')`,(err,result)=>{
                                                         
                                                         if(err){
-                                                            res.status(500).json(err);
+                                                           return  res.status(500).json(err);
                                                         }
                                                         
                                                             if(result.affectedRows===1){
@@ -106,11 +106,11 @@ module.exports ={
 
                                                                    
                                                                     if(err){
-                                                                        res.status(500).json(err);
+                                                                       return  res.status(500).json(err);
                                                                     }
                                                                     
                                                                         if(result.affectedRows===1){
-                                                                            res.status(201).send('add success');
+                                                                           return  res.status(201).send('add success');
                                                                           
             
                                                                         
@@ -127,7 +127,7 @@ module.exports ={
                                   })
                                }
                                else{
-                                   res.json({msg:'ko tim thay id'})
+                                  return  res.json({msg:'ko tim thay id'})
                                }
                             }
                         })
@@ -137,7 +137,7 @@ module.exports ={
                         // db.query(`select id from nhanvien 
                         // where id_phongban='${id_phongban}' and id_chucvu='${id_chucvu}' and id_hopdong='${id_hopdong}'`,(err,result)=>{
                         //     if(err){
-                        //        res.status(500).json(err);
+                        //       return  res.status(500).json(err);
                         //     }
                             
                         //    else{
@@ -147,11 +147,11 @@ module.exports ={
                         //         db.query(`insert into nhanvien (id,ten_nhanvien,id_phongban,id_chucvu,id_hopdong,soCMND,trangthai,email,ngaysinh,diachi,hocvan)
                         //         values ('${autogenerateid}','${ten_nhanvien}','${id_phongban}','${id_chucvu}','${id_hopdong}', '${soCMND}', '${trangthai}','${email}', '${ngaysinh}', '${diachi}', '${hocvan}')`,(err,result)=>{
                         //             if(err){
-                        //                res.status(500).json(err);
+                        //               return  res.status(500).json(err);
                         //             }
                                    
                         //                else{
-                        //                 res.status(201).json({msg:'add success'});
+                        //                return  res.status(201).json({msg:'add success'});
                         //                }
                                     
                         //            })
@@ -183,7 +183,7 @@ module.exports ={
         db.query(`select phongban.id as phongbanid ,chucvu.id as chucvuid,hopdong.id as hopdongid from hopdong, phongban,chucvu where ten_phongban='${ten_phongban}'
                         and ten_chucvu='${ten_chucvu}'and tenhopdong='${tenhopdong}'`,(err,result)=>{
                             if(err){
-                               res.status(500).json(err);
+                              return  res.status(500).json(err);
                             }
                             else{
                                 
@@ -195,14 +195,14 @@ module.exports ={
                                     ORDER BY id DESC  
                                     LIMIT 1;`,(err,result)=>{
                                         if(err){
-                                            res.status(500).json(err);
+                                           return  res.status(500).json(err);
                                         }
                                         else{
                                           const{tieusuid}=result[0];
                                           db.query(`update nhanvien SET ten_nhanvien='${ten_nhanvien}',id_phongban='${object.phongbanid}',id_chucvu='${object.chucvuid}',id_hopdong='${object.hopdongid}',
                                           soCMND='${soCMND}',trangthai='${trangthai}',email='${email}',ngaysinh='${ngaysinh}',diachi='${diachi}',hocvan='${hocvan}' where id='${id}'  `,(err,result)=>{
                                               if(err){
-                                                 res.status(500).json(err);
+                                                return  res.status(500).json(err);
                                               }
                                               else{
                                                 if(result.affectedRows===1){
@@ -210,15 +210,15 @@ module.exports ={
                                                              where id='${tieusuid}'
                                                              `,(err,result)=>{
                                                                  if(err){
-                                                                     res.status(500).json(err);
+                                                                    return  res.status(500).json(err);
                                                                  }
                                                                  else{
                                                                     db.query(`update user set ten_nhanvien='${ten_nhanvien}'where id_nhanvien='${id}'`,(err,result)=>{
                                                                         if(err){
-                                                                            res.status(500).json(err);
+                                                                           return  res.status(500).json(err);
                                                                         }
                                                                         else{
-                                                                            res.status(200).json({msg:'update success'});
+                                                                           return  res.status(200).json({msg:'update success'});
                                                                         }
                                                                     })
                                                                  }
@@ -232,7 +232,7 @@ module.exports ={
                                     })
                                }
                                else{
-                                   res.status(500).json({msg:'ko tim thay id'})
+                                  return  res.status(500).json({msg:'ko tim thay id'})
                                }
                             }
                         })
@@ -242,7 +242,7 @@ module.exports ={
         const{id}=req.params;
         db.query(`select * from nhanvien where id='${id}'`,(err,result)=>{
             if(err){
-               res.status(500).json(err);
+              return  res.status(500).json(err);
             }
             if(result.length<=0){
                 res.sta('ko tim thay id');
@@ -250,13 +250,13 @@ module.exports ={
             else{
                 db.query(`DELETE FROM nhanvien WHERE id='${id}'`,(err,result)=>{
                     if(err){
-                        res.status(500).json(err);
+                       return  res.status(500).json(err);
                     }
                     if(result.affectedRows===1){
-                        res.status(204).json({msg:'delete thanh cong'});
+                       return  res.status(204).json({msg:'delete thanh cong'});
                     }
                     else{
-                        res.status(500).json({msg:'delete that bai'});
+                       return  res.status(500).json({msg:'delete that bai'});
                     }
                 })
             }
@@ -272,7 +272,7 @@ module.exports ={
         db.query(`select phongban.id as phongbanid ,chucvu.id as chucvuid,hopdong.id as hopdongid from hopdong, phongban,chucvu where ten_phongban='${ten_phongban}'
                         and ten_chucvu='${ten_chucvu}'and tenhopdong='${tenhopdong}'`,(err,result)=>{
                             if(err){
-                               res.status(500).json(err);
+                              return  res.status(500).json(err);
                             }
                             else{
                                 
@@ -283,30 +283,30 @@ module.exports ={
                                 id_chucvu='${object.chucvuid}' and id_hopdong='${object.hopdongid}'
                                   `,(err,result)=>{
                                       if(err){
-                                          res.status(500).json(err);
+                                         return  res.status(500).json(err);
                                       }
                                       if(result.length>0){
-                                          res.status(500).json({msg:'du lieu chua duoc thay doi'});
+                                         return  res.status(500).json({msg:'du lieu chua duoc thay doi'});
                                       }
                                       else{
                                                 db.query(`update nhanvien SET id_phongban='${object.phongbanid}',id_chucvu='${object.chucvuid}',id_hopdong='${object.hopdongid}' where id='${id}' `,(err,result)=>{
                                                     if(err){
-                                                    res.status(500).json(err);
+                                                   return  res.status(500).json(err);
                                                     }
                                                     else{
                                                     if(result.affectedRows===1){
                                                     db.query(`select ten_nhanvien from nhanvien where id='${id}'`,(err,result)=>{
                                                         if(err){
-                                                            res.status(500).json(err);
+                                                           return  res.status(500).json(err);
                                                         }
                                                         else{
                                                             db.query(`insert into tieusu (id_nhanvien,ten_nhanvien,ten_phongban,ten_chucvu,tenhopdong,thoigian) values('${id}','${result[0].ten_nhanvien}','${ten_phongban}',
                                                             '${ten_chucvu}','${tenhopdong}','${new Date().toString()}')`,(err,result)=>{
                                                                 if(err){
-                                                                    res.status(500).json(err);
+                                                                   return  res.status(500).json(err);
                                                                 }
                                                                 if(result.affectedRows===1){
-                                                                    res.status(200).json({msg:'success'});
+                                                                   return  res.status(200).json({msg:'success'});
                                                                 }
                                                             });
                                                         }
@@ -322,7 +322,7 @@ module.exports ={
                                   })
                                }
                                else{
-                                   res.json({msg:'ko tim thay id'})
+                                  return  res.json({msg:'ko tim thay id'})
                                }
                             }
                         })
@@ -335,10 +335,10 @@ module.exports ={
         const{id}=req.params
         db.query(`select * from tieusu where id_nhanvien='${id}'`,(err,result)=>{
             if(err){
-               res.status(500).json(err);
+              return  res.status(500).json(err);
             }
             else{
-                res.json(result);
+               return  res.json(result);
             }
         })
     }

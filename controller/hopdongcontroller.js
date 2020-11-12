@@ -18,13 +18,13 @@ module.exports ={
     getList:(req,res)=>{
         db.query(`select * from hopdong`,(err,result)=>{
             if(err){
-               res.status(500).json(err);
+              return  res.status(500).json(err);
             }
             if(result.length<=0){
-                res.json(null);
+               return  res.json(null);
             }
             else{
-                res.status(200).json(result);
+               return  res.status(200).json(result);
             }
         })
     },
@@ -33,11 +33,11 @@ module.exports ={
         let autogenerateid='id_'.concat(change_alias(tenhopdong).split(' ').join(''));
         db.query(`insert into hopdong (id,tenhopdong,loaihopdong,thoigiancapnhat)values ('${autogenerateid}','${tenhopdong}','${loaihopdong}','${new Date().toString()}')`,(err,result)=>{
             if(err){
-                res.status(500).json(err)
+               return  res.status(500).json(err)
             }
            
            else{
-            res.status(200).json({msg:'add success'});
+           return  res.status(200).json({msg:'add success'});
            }
         })
 
@@ -49,31 +49,31 @@ module.exports ={
         const{tenhopdong,loaihopdong}=req.body;
         db.query(`select * from hopdong where id='${id}'`,(err,result)=>{
             if(err){
-               res.status(500).json(err);
+              return  res.status(500).json(err);
             }
             if(result.length<=0){
-                res.json({msg:'ko tim thay id'});
+               return  res.json({msg:'ko tim thay id'});
             }
             else{
                db.query(`select id from hopdong where hopdong.tenhopdong='${tenhopdong}' and  id!='${id}'`,(err,result)=>{
                    if(err){
-                       res.status(500).json(err);
+                      return  res.status(500).json(err);
                    }
                    if(result.length<=0){
                     db.query(`UPDATE hopdong SET tenhopdong='${tenhopdong}' , loaihopdong='${loaihopdong}', thoigiancapnhat='${new Date().toString()}' where id='${id}'`,(err,result)=>{
                         if(err){
-                            res.json(err)
+                           return  res.json(err)
                         }
                         if(result.affectedRows===1){
-                            res.status(200).json({msg:'update thanh cong'});
+                           return  res.status(200).json({msg:'update thanh cong'});
                         }
                         else{
-                            res.status(500).json({msg:'update that bai'});
+                           return  res.status(500).json({msg:'update that bai'});
                         }
                     });
                    }
                    else{
-                    res.status(500).json({msg:'ten hop dong  nay da ton tai'});
+                   return  res.status(500).json({msg:'ten hop dong  nay da ton tai'});
                    }
                })
             }
@@ -84,21 +84,21 @@ module.exports ={
         const{id}=req.params;
         db.query(`select * from hopdong where id='${id}'`,(err,result)=>{
             if(err){
-              res.status(500).json(err);
+             return  res.status(500).json(err);
             }
             if(result.length<=0){
-                res.json({msg:'ko tim thay id'})
+               return  res.json({msg:'ko tim thay id'})
             }
             else{
                 db.query(`DELETE FROM hopdong WHERE id='${id}'`,(err,result)=>{
                     if(err){
-                       res.status(500).json(err);
+                      return  res.status(500).json(err);
                     }
                     if(result.affectedRows===1){
-                        res.status(204).json({msg:'delete thanh cong'});
+                       return  res.status(204).json({msg:'delete thanh cong'});
                     }
                     else{
-                        res.status(500).json({msg:'delete that bai'});
+                       return  res.status(500).json({msg:'delete that bai'});
                     }
                 })
             }

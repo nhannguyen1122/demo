@@ -4,10 +4,10 @@ module.exports ={
     getList:(req,res) =>{
         db.query('select * from user where quyen!= "admin"',(err,result)=>{
             if(err){
-                res.status(500).json(err)
+                return res.status(500).json(err)
             }
             if(result.length>0){
-                res.status(200).json(result);
+                return res.status(200).json(result);
             }
         })
     },
@@ -34,26 +34,26 @@ module.exports ={
    
        db.query(`select id from user where user.id_nhanvien='${id_nhanvien}' and user.tendangnhap='${tendangnhap}'`,(err,result)=>{
            if(err){
-               res.status(500).json(err);
+               return res.status(500).json(err);
            }
            if(result.length>0){
-               res.status(500).json({msg:' thanh vien nay da co tai khoan'});
+               return res.status(500).json({msg:' thanh vien nay da co tai khoan'});
            }
            else{
             db.query(`select * from user where  tendangnhap='${tendangnhap}'`,(err,result)=>{
                     if(err){
-                        res.status(500).json(err);
+                        return res.status(500).json(err);
                     }
                     if(result.length>0){
-                        res.status(500).json({msg:'ten dang nhap da ton tai'})
+                        return res.status(500).json({msg:'ten dang nhap da ton tai'})
                     }
                     else{
                         db.query(`insert into user (id,id_nhanvien,ten_nhanvien, tendangnhap, matkhau,quyen)values ('${result1}','${id_nhanvien}','${ten_nhanvien}','${tendangnhap}', '${matkhau}', '${quyen}')`,(err,result)=>{
                             if(err){
-                                res.status(500).json(err)
+                                return res.status(500).json(err)
                             }
                            
-                            res.status(201).json({msg:'add success'});
+                            return res.status(201).json({msg:'add success'});
                         })
                     }
                 })
@@ -77,31 +77,31 @@ module.exports ={
         const{tendangnhap,matkhau}=req.body;
         db.query(`select * from user where id='${id}'`,(err,result)=>{
             if(err){
-                res.status(500).json(err);
+                return res.status(500).json(err);
             }
             if(result.length<=0){
-                res.status(500).json({msg:'ko tim thay id'})
+                return res.status(500).json({msg:'ko tim thay id'})
             }
             else{
                db.query(`select id from user where tendangnhap='${tendangnhap}' and id!='${id}'`,(err,result)=>{
                    if(err){
-                       res.status(500).json(err);
+                       return res.status(500).json(err);
                    }
                    if(result.length<=0){
                     db.query(`UPDATE user SET tendangnhap = '${tendangnhap}', matkhau = '${matkhau}' WHERE id = '${id}'`,(err,result)=>{
                         if(err){
-                            res.status(500).json(err)
+                            return res.status(500).json(err)
                         }
                         if(result.affectedRows===1){
-                            res.status(200).json({msg:'update thanh cong'});
+                            return res.status(200).json({msg:'update thanh cong'});
                         }
                         else{
-                            res.status(500).json({msg:'update that bai'});
+                            return res.status(500).json({msg:'update that bai'});
                         }
                     });
                    }
                    else{
-                       res.status(500).json({msg:'ten dang nhap da ton tai'});
+                       return res.status(500).json({msg:'ten dang nhap da ton tai'});
                    }
                })
             }
@@ -126,10 +126,10 @@ module.exports ={
                         res.json(err);
                     }
                     if(result.affectedRows===1){
-                        res.status(204).json({msg:'delete thanh cong'});
+                        return res.status(204).json({msg:'delete thanh cong'});
                     }
                     else{
-                        res.status(500).json({msg:'delete that bai'});
+                        return res.status(500).json({msg:'delete that bai'});
                     }
                 })
             }
